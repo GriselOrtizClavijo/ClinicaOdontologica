@@ -13,25 +13,25 @@ window.addEventListener('load', function () {
 
             var table = document.getElementById("turnoTable");
             var turnoRow =table.insertRow();
-            let tr_id = 'tr_' + Turnos.id;
+            let tr_id = 'tr_' + turno.id;
             turnoRow.id = tr_id;
 
             let deleteButton = '<button' +
-                                      ' id=' + '\"' + 'btn_delete_' + Turnos.id + '\"' +
-                                      ' type="button" onclick="deleteBy('+Turnos.id+')" class="btn btn-danger btn_delete">' +
+                                      ' id=' + '\"' + 'btn_delete_' + turno.id + '\"' +
+                                      ' type="button" onclick="deleteBy('+turno.id+')" class="btn btn-danger btn_delete">' +
                                       '&times' +
                                       '</button>';
 
             let updateButton = '<button' +
-                                      ' id=' + '\"' + 'btn_id_' +Turnos.id + '\"' +
-                                      ' type="button" onclick="findBy('+Turnos.id+')" class="btn btn-info btn_id">' +
-                                      Turnos.id +
+                                      ' id=' + '\"' + 'btn_id_' +turno.id + '\"' +
+                                      ' type="button" onclick="findBy('+turno.id+')" class="btn btn-info btn_id">' +
+                                      turno.id +
                                       '</button>';
 
             turnoRow.innerHTML = '<td>' + updateButton + '</td>' +
-                    '<td class=\"td_fecha\">' + Turnos.date + '</td>' +
-                    '<td class=\"td_paciente_id\">' + Turnos.paciente.apellido.toUpperCase() + ', ' + Turnos.paciente.nombre + '</td>' +
-                    '<td class=\"td_odontologo_id\">' + Turnos.odontologo.apellido.toUpperCase() + ', '+ Turnos.odontologo.nombre + '</td>' +
+                    '<td class=\"td_fecha\">' + turno.date + '</td>' +
+                    '<td class=\"td_paciente_id\">' + turno.paciente.apellido.toUpperCase() + ', ' + turno.paciente.nombre + '</td>' +
+                    '<td class=\"td_odontologo_id\">' + turno.odontologo.apellido.toUpperCase() + ', '+ turno.odontologo.nombre + '</td>' +
                     '<td>' + deleteButton + '</td>';
         };
     })

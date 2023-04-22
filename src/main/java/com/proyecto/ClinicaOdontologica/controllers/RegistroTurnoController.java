@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collection;
 import java.util.Set;
 
 @RestController
@@ -27,10 +26,10 @@ public class RegistroTurnoController {
     private RegistroTurnoService registroTurnoService;
 
     @GetMapping
-    public Collection<RegistroTurnoDto> listarTurnos() throws ResourceNotFoundException, OkException {
+    public ResponseEntity<Set<RegistroTurnoDto>> listarTurnos() throws ResourceNotFoundException, OkException {
         Set<RegistroTurnoDto> registroTurnoDtos = registroTurnoService.listarTurnos();
         logger.info("Se listan los pacientes desde el controller");
-        throw new OkException("Se listan turnos correctamente" + registroTurnoDtos.toString());
+        return ResponseEntity.status(HttpStatus.FOUND).body(registroTurnoDtos);
     }
 
 

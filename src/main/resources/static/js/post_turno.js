@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
                      id: document.querySelector('#odontologo_id').value
                    }
                };
-               console.log(formData)
+
 
          const url = '/turnos';
          const settings = {
@@ -61,7 +61,7 @@ window.addEventListener('load', function () {
          let pathname = window.location.pathname;
          if(pathname === "/"){
              document.querySelector(".nav .nav-item a:first").addClass("active");
-         } else if (pathname == "/turnos.html") {
+         } else if (pathname == "/listarTurnos.html") {
              document.querySelector(".nav .nav-item a:last").addClass("active");
          }
      })();

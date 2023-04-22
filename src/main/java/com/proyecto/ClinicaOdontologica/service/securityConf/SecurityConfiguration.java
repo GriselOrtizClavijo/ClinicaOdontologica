@@ -23,9 +23,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
             /*http.csrf().disable()
                     .authorizeRequests()
-                    .antMatchers("/**")
-                    .authenticated().and()
-                    .formLogin();*/
+                    .antMatchers("/odontologos/**").permitAll()
+                    .antMatchers("/pacientes/**").permitAll()
+                    .antMatchers("/turnos/**").permitAll()
+                    .and()
+                    .formLogin().permitAll();*/
+
         http.authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated().and().csrf().disable();
     }
 

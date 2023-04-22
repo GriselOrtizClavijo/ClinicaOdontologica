@@ -6,7 +6,7 @@ $(document).ready(function () {
         odontologoId = btn_id.split("_")[2];
 
         $("div.modal-body")
-            .text("Querés eliminar el odontólogo con ID = " + odontologoId + "?");
+            .text("¿Querés eliminar el odontólogo con ID = " + odontologoId + "?");
         $("#model-delete-btn").css({ "display": "inline" });
     });
 
@@ -16,7 +16,7 @@ $(document).ready(function () {
             type: 'DELETE',
             success: function (response) {
                 $("div.modal-body")
-                    .text("Eliminado correctamente!");
+                    .text("Eliminado correctamente");
 
                 $("#model-delete-btn").css({ "display": "none" });
                 $("button.btn.btn-secondary").text("Close");

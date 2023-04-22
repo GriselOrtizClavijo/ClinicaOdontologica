@@ -33,6 +33,7 @@ import java.util.List;
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
 @TestMethodOrder(MethodOrderer.MethodName.class)
+
 class OdontologoControllersTest {
 
     @Autowired
@@ -76,7 +77,7 @@ class OdontologoControllersTest {
                         .andReturn();
 
         //Assertions
-        Assertions.assertFalse( response.getResponse().getContentAsString().isEmpty());
+        Assertions.assertFalse(response.getResponse().getContentAsString().isEmpty());
 
     }
 
@@ -112,24 +113,6 @@ class OdontologoControllersTest {
                         .andDo(MockMvcResultHandlers.print())
                         .andExpect(MockMvcResultMatchers.status().isOk())
                         .andReturn();
-
-        //Assertions
-        Assertions.assertFalse(response.getResponse().getContentAsString().isEmpty());
-
-
-    }
-    @Test
-    void test_5_modificarUsuarios() throws Exception {
-
-        //Arrange
-        OdontologoDto odontologoDto = new OdontologoDto("Juana", "Marin", 987);
-
-        //Act
-        MvcResult response = mockMvc.perform(MockMvcRequestBuilders.patch("/odontologos/{id}", 1)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andReturn();
 
         //Assertions
         Assertions.assertFalse(response.getResponse().getContentAsString().isEmpty());

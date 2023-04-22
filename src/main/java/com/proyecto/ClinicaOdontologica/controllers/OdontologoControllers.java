@@ -26,10 +26,10 @@ public class OdontologoControllers {
 
 
    @GetMapping
-    public ResponseEntity<OdontologoDto> listarUsuarios() throws OkException, ResourceNotFoundException {
+    public ResponseEntity<Set<OdontologoDto>> listarUsuarios() throws ResourceNotFoundException {
        Set<OdontologoDto> odontologoDto = odontologoService.listarOdontologos();
            logger.info("Se listan los odontologos desde el controller");
-           throw new OkException("Se listan odontólogos correctamente" + odontologoDto);
+           return ResponseEntity.status(HttpStatus.OK).body(odontologoDto);
    }
 
 

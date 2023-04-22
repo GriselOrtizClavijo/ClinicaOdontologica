@@ -27,10 +27,10 @@ public class PacienteControllers {
 
 
     @GetMapping
-    public ResponseEntity<PacienteDto> listarPacientes() throws ResourceNotFoundException, OkException {
+    public ResponseEntity<Set<PacienteDto>> listarPacientes() throws ResourceNotFoundException, OkException {
        Set<PacienteDto> pacienteDto = pacienteService.listarPacientes();
         logger.info("Se listan los pacientes desde el controller");
-        throw new OkException("Se listan pacientes correctamente" + pacienteDto.toString());
+        return ResponseEntity.status(HttpStatus.FOUND).body(pacienteDto);
     }
 
 

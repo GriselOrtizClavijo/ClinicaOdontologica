@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Set;
 
 @Entity
@@ -18,8 +18,8 @@ public class Paciente  {
     private String apellido;
     private int dni;
 
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    //@Temporal(TemporalType.DATE)
+    //@DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaAlta;
 
    @OneToMany(fetch = FetchType.EAGER)
